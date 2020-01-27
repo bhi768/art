@@ -177,11 +177,6 @@ func hostFlags(ctx android.BaseContext) []string {
 		cflags = append(cflags, "-DART_ENABLE_ADDRESS_SANITIZER=1")
 	}
 
-	if !envFalse(ctx, "CPU_SSE42") {
-		cflags = append(cflags, "-msse4.2")
-		cflags = append(cflags, "-mpopcnt")
-	}
-
 	return cflags
 }
 
